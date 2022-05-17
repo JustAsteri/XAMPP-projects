@@ -24,8 +24,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-$config['base_url'] = 'http://localhost:8080/BaseISW19/';
-//$config['base_url'] = 'http://www.rehabilitacionneurologicaintegral.com.mx/BaseISW19/';  
+$config['base_url'] = 'http://localhost/ISW19/BaseISW19/';
+//$config['base_url'] = 'http://www.rehabilitacionneurologicaintegral.com.mx/BaseISW19/';
 
 /*
 |--------------------------------------------------------------------------
@@ -47,7 +47,7 @@ $config['index_page'] = 'index.php';
 | This item determines which server global should be used to retrieve the
 | URI string.  The default setting of 'REQUEST_URI' works for most servers.
 | If your links do not seem to work, try one of the other delicious flavors:
-| 
+|
 | 'REQUEST_URI'    Uses $_SERVER['REQUEST_URI']
 | 'QUERY_STRING'   Uses $_SERVER['QUERY_STRING']
 | 'PATH_INFO'      Uses $_SERVER['PATH_INFO']
