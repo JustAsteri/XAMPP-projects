@@ -24,6 +24,7 @@ class Dashboard extends MY_Controller {
      $email = $this->input->post('email');
      $username = $this->input->post('username');
      $password = $this->input->post('password');
+     $ocupacion = $this->input->post('ocupacion');
 
      $datosusuario = array(
        'nombre' => $nombre,
