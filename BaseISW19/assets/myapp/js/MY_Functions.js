@@ -13,7 +13,7 @@ function validateuserlogin(){
     $('#fountainTextG').show();
     $.post(url,
             {
-                user:user,  
+                user:user,
                 pass: pass
             }, function(data){
                 sendresponsetouser(data);
@@ -38,25 +38,25 @@ function ResetUserLogin(){
                 if (response == "UWOA") {
 
                     swal("Error","Usuario sin acceso a esta aplicación","error");
-     
+
                 }else if(response == "IUOP"){
 
                     swal("Error","Usuario o contraseña incorecta","error");
                 }else{
 
-                    swal({   
+                    swal({
                         title: "Exito",
-                        text: "Se ha reseteado la sesion con exito",   
-                        type: "success",   
-                        showCancelButton: false,   
-                        confirmButtonColor: "#DD6B55",   
-                        confirmButtonText: "OK",   
-                        cancelButtonText: "No, Cancelar",   
-                        closeOnConfirm: true,   
-                        closeOnCancel: false 
-                    }, function(isConfirm){   
-                         
-                         location.href = "";  
+                        text: "Se ha reseteado la sesion con exito",
+                        type: "success",
+                        showCancelButton: false,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "OK",
+                        cancelButtonText: "No, Cancelar",
+                        closeOnConfirm: true,
+                        closeOnCancel: false
+                    }, function(isConfirm){
+
+                         location.href = "";
                     });
                  }
 
@@ -65,7 +65,7 @@ function ResetUserLogin(){
                 swal("Error","Ha ocurrido un error intentelo de nuevo","error");
             }
         });
-    
+
     }else{
 
         swal("Cuidado", "Aun quedan campos vacios", "warning")
@@ -74,7 +74,7 @@ function ResetUserLogin(){
 }
 
 function sendresponsetouser(data){
-    var dato = data.trim();  
+    var dato = data.trim();
     if(dato.substring(0,3) === "OK-"){
         openurl(dato);
     }else if(dato.substring(0,4)==="UWOA"){
@@ -112,7 +112,7 @@ function closeresponsetouser(){
         $('#displayUserErrors').empty();
     });
 
-} 
+}
 
 function LogOut(){
 
@@ -121,21 +121,21 @@ function LogOut(){
         type:'GET',
         async: true,
         success:function(datos){
-            swal({   
+            swal({
                 title: "Error",
-                text: "La sesion ha caducado, porfavor inicia sesion de nuevo",   
-                type: "error",   
-                showCancelButton: false,   
-                confirmButtonColor: "#DD6B55",   
-                confirmButtonText: "OK",   
-                cancelButtonText: "Cancelar",   
-                closeOnConfirm: false,   
-                closeOnCancel: false 
-            }, function(isConfirm){ 
-                    location.href = myBase_url+"index.php/Session";       
-            });     
+                text: "La sesion ha caducado, porfavor inicia sesion de nuevo",
+                type: "error",
+                showCancelButton: false,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "OK",
+                cancelButtonText: "Cancelar",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }, function(isConfirm){
+                    location.href = myBase_url+"index.php/Session";
+            });
         }
-    });   
+    });
 }
 
 
@@ -156,32 +156,97 @@ function CheckUActivo(){
                     type:'GET',
                     async: true,
                     success:function(datos){
-                        swal({   
+                        swal({
                             title: "Error",
-                            text: "Tu cuenta ha sido eliminada, para mayor informacion acude con el administrador",   
-                            type: "error",   
-                            showCancelButton: false,   
-                            confirmButtonColor: "#DD6B55",   
-                            confirmButtonText: "OK",   
-                            cancelButtonText: "Cancelar",   
-                            closeOnConfirm: false,   
-                            closeOnCancel: false 
-                        }, function(isConfirm){ 
-                                location.href = myBase_url+"index.php/Session";       
-                        }); 
+                            text: "Tu cuenta ha sido eliminada, para mayor informacion acude con el administrador",
+                            type: "error",
+                            showCancelButton: false,
+                            confirmButtonColor: "#DD6B55",
+                            confirmButtonText: "OK",
+                            cancelButtonText: "Cancelar",
+                            closeOnConfirm: false,
+                            closeOnCancel: false
+                        }, function(isConfirm){
+                                location.href = myBase_url+"index.php/Session";
+                        });
                     }
                 });
-            }  
+            }
         }
     });
 
-} 
+}
 
 
 /* END - CONTROLLER: Session */
 
 /* =============================================================================================================================================================================================================================== */
 
+/* START - CONTROLLER: Dashboard */
+
+function guardar_usuario()
+{
+  //traer informacion
+  var nombre = $('#nombre').val();    //.val() -> Get the current value of the first element in the set of matched elements or set the value of every matched element.
+  var apaterno = $('#apaterno').val();
+  var amaterno = $('#amaterno').val();
+  var telefono = $('#telefono').val();
+  var email = $('#email').val();
+  var username = $('#username').val();
+  var password = $('#password').val();
+  var ocupacion = $('#ocupacion').val();
+
+  if (nombre != "" &&
+  ocupacion != "" &&
+  username != "" &&
+  password != "" &&
+  apaterno != "" &&
+  amaterno != "" &&
+  telefono != "" &&
+  email != "")
+  {
+    $.ajax({
+        url:myBase_url+"index.php/Dashboard/SaveUser",
+        type:'POST',
+        data:
+          {
+            nombre:nombre,
+            apaterno:apaterno,
+            amaterno:amaterno,
+            email:email,
+            telefono:telefono,
+            ocupacion:ocupacion,
+            username:username,
+            password:password
+          }, //
+        async: true,
+        success:function(datos){
+          swal({
+              title: "Exito",
+              text: "Se ha guardado la sesion con exito",
+              type: "Sucess",
+              showCancelButton: false,
+              confirmButtonColor: "#DD6B55",
+              confirmButtonText: "OK",
+              cancelButtonText: "Cancelar",
+              closeOnConfirm: false,
+              closeOnCancel: false
+          }, function(isConfirm){
+                  location.href = "";
+          });
+        },
+        error: function(){
+          swal("Error 1","Aun existen campos vacios","error");
+        }
+      });
+  }
+  else
+  {
+    swal("Error 2","Aun existen campos vacios","error");
+  }
+}
+
+/* END - CONTROLLER: Dashboard */
 
 /* =============================================================================================================================================================================================================================== */
 
@@ -190,4 +255,3 @@ function CheckUActivo(){
 
 
 /* =============================================================================================================================================================================================================================== */
-
