@@ -194,16 +194,46 @@ function guardar_usuario()
   var email = $('#email').val();
   var username = $('#username').val();
   var password = $('#password').val();
-  var ocupacion = $('#ocupacion').val();
+  var rol = $('#rol').val();
 
   if (nombre != "" &&
-  ocupacion != "" &&
   username != "" &&
   password != "" &&
   apaterno != "" &&
   amaterno != "" &&
   telefono != "" &&
-  email != "")
+  email != "" &&
+  rol != "")
+  {
+    guardar_usuario_server();
+  }
+  else
+  {
+    swal("Error 2","Aun existen campos vacios","error");
+  }
+}
+
+function guardar_usuario_server()
+{
+    var nombre = $('#nombre').val();    //.val() -> Get the current value of the first element in the set of matched elements or set the value of every matched element.
+  var apaterno = $('#apaterno').val();
+  var amaterno = $('#amaterno').val();
+  var telefono = $('#telefono').val();
+  var email = $('#email').val();
+  var username = $('#username').val();
+  var password = $('#password').val();
+  var rol = $('#rol').val();
+
+  alert(rol);
+
+  if (nombre != "" &&
+  username != "" &&
+  password != "" &&
+  apaterno != "" &&
+  amaterno != "" &&
+  telefono != "" &&
+  email != "" &&
+  rol != "")
   {
     $.ajax({
         url:myBase_url+"index.php/Dashboard/SaveUser",
@@ -215,9 +245,9 @@ function guardar_usuario()
             amaterno:amaterno,
             email:email,
             telefono:telefono,
-            ocupacion:ocupacion,
             username:username,
-            password:password
+            password:password,
+            rol:rol
           }, //
         async: true,
         success:function(datos){

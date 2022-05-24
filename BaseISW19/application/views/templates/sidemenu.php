@@ -40,6 +40,9 @@
                             <li class="has_sub" id="home">
                                 <a href="<?= base_url('index.php/Dashboard/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Inicio</span> </a>
                             </li>
+                            <li class="has_sub" id="usuarios">
+                                <a href="<?= base_url('index.php/Usuarios/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Usuarios</span> </a>
+                            </li>
 
                         </ul>
                         <div class="clearfix"></div>

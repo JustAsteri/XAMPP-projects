@@ -72,39 +72,8 @@
                                 <div class="panel-body">
 
                                   <div class="card-box">
-                                  <!-- <form role="form" method="POST" id="formMaterial"> -->
-                                      <div class="box-body">
-                                        <div class="col-xs-12">
-                                            <input class="form-control" type="text" required="" id="nombre" placeholder="Nombre">
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <input class="form-control" type="text" required="" id="apaterno" placeholder="Apellido paterno">
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <input class="form-control" type="text" required="" id="amaterno" placeholder="Apellido Materno">
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <input class="form-control" type="text" required="" id="telefono" placeholder="Telefono">
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <input class="form-control" type="text" required="" id="email" placeholder="Email">
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <input class="form-control" type="text" required="" id="username" placeholder="Usuario">
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <input class="form-control" type="password" required="" id="password" placeholder="Contraseña">
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <input class="form-control" type="text" required="" id="ocupacion" placeholder="Ocupacion">
-                                        </div>
-                                        <div align="center">
-                                          <button class="btn btn-primary waves-effect waves-light" onClick="guardar_usuario();">Guardar</button>
-                                        </div>
-                                      </div>
-                                  <!-- </form> -->
+                                    
                                 </div>
-
                             </div>
                           </div>
                         </div>

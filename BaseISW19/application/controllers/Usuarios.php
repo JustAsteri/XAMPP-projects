@@ -1,15 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends MY_Controller {
+class Usuarios extends MY_Controller {
 
     public function __construct() {
         parent::__construct();
     }
 
     public function index(){
-        $data['tabTitle'] = "Plantilla Base - Inicio";
-        $data['pagecontent'] = "dashboard/dashboard";
+        $data['tabTitle'] = "Plantilla Base - Usuarios";
+        $data['pagecontent'] = "usuarios/usuarios";
 
         $this->loadpageintotemplate($data);
 
