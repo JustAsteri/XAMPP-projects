@@ -43,6 +43,12 @@
                             <li class="has_sub" id="usuarios">
                                 <a href="<?= base_url('index.php/Usuarios/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Usuarios</span> </a>
                             </li>
+                            <li class="has_sub" id="usuarios">
+                                <a href="<?= base_url('index.php/Calendario/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Calendario</span> </a>
+                            </li>
+                            <li class="has_sub" id="usuarios">
+                                <a href="<?= base_url('index.php/Clientes/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Clientes</span> </a>
+                            </li>
 
                         </ul>
                         <div class="clearfix"></div>
