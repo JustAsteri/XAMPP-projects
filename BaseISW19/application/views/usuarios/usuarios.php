@@ -107,15 +107,26 @@
                                       </div>
                                     </div>
                                   <!-- </form> -->
+
+                                  <!-- Table -->
                                     <div class="box-body col-xs-7">
                                         <table class="table">
                                           <thead>
                                             <title>Lista de usuarios</title>
                                             <tr>
                                               <th scope="col">#</th>
-                                              <th scope="col">First</th>
-                                              <th scope="col">Last</th>
-                                              <th scope="col">Handle</th>
+                                              <th scope="col">Nombre</th>
+                                              <th scope="col">Contacto de Emergencia</th>
+                                              <th scope="col">Referidor</th>
+                                              <th scope='col'>Sucursal</th>
+                                              <th scope='col'>Fecha de valoracion</th>
+                                              <th scope='col'>Fecha de revaloracion</th>
+                                              <th scope='col'>Fecha de nacimiento</th>
+                                              <th scope='col'>Escuela</th>
+                                              <th scope='col'>Codigo</th>
+                                              <th scope='col'>Estatus</th>
+                                              <th scope='col'>Editar</th>
+                                              <th scope='col'>Borrar</th>
                                             </tr>
                                           </thead>
                                           <tbody>
