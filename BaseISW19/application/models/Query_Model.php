@@ -20,6 +20,15 @@ function DatosUsuario()
 
 }
 
+function GetUserById($id)
+{
+  $this->db->select('*');
+  $this->db->from('usuarios');
+  $this->db->where('id_usuario', $id);
+  $query = $this->db->get();
+  return $query->result();
+}
+
  /* END - CONTROLLER: Usuarios */
 
 /* =============================================================================================================================================================================================================================== */

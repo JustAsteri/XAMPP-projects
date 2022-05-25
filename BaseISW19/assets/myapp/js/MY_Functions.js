@@ -182,7 +182,7 @@ function CheckUActivo(){
 
 /* =============================================================================================================================================================================================================================== */
 
-/* START - CONTROLLER: Dashboard */
+/* START - CONTROLLER: Usuario */
 
 function guardar_usuario()
 {
@@ -234,7 +234,7 @@ function guardar_usuario_server()
   rol != "")
   {
     $.ajax({
-        url:myBase_url+"index.php/Dashboard/SaveUser",
+        url:myBase_url+"index.php/Usuarios/SaveUser",
         type:'POST',
         data:
           {
@@ -274,7 +274,38 @@ function guardar_usuario_server()
   }
 }
 
-/* END - CONTROLLER: Dashboard */
+function EditarUsuario($id)
+{
+    var id = $id;
+
+    $.ajax({
+        url:myBase_url+"index.php/Usuarios/UsuarioPorID",
+        type:'POST',
+        data:{id:id},
+        async: true,
+        success:function(datos){
+            var obj       = JSON.parse(datos);
+
+            var nombre    = obj[0].nombre;
+            var apaterno  = obj[0].apaterno;
+            var amaterno  = obj[0].amaterno;
+            var telefono  = obj[0].telefono;
+            var email     = obj[0].email;
+            var username  = obj[0].username;
+            var password  = obj[0].password;
+            var ocupacion = obj[0].ocupacion;
+            var rol       = obj[0].rol;
+            var estado    = obj[0].estado;
+
+            
+        },
+        error: function(){
+          swal("Error 1","Aun existen campos vacios","error");
+        }
+    });
+}
+
+/* END - CONTROLLER: Usuario */
 
 /* =============================================================================================================================================================================================================================== */
 

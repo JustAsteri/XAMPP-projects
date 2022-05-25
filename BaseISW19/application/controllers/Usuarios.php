@@ -56,4 +56,11 @@ class Usuarios extends MY_Controller {
      $this->Query_Model->InsertUsuario($datosusuario);
    }
 
+   public function UsuarioPorID()
+   {
+        $id = $this->input->post('id');
+        $res = $this->Query_Model->GetUserById($id);
+        echo json_encode($res);
+   }
+
 }
