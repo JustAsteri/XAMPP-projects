@@ -136,11 +136,11 @@
 
 
                                       <div align="center">
-                                        <button class="btn btn-primary waves-effect waves-light" onClick="GuardarUsuario();">Guardar</button>
+                                        <button class="btn btn-primary waves-effect waves-light" onClick="guardar_usuario();">Guardar</button>
                                       </div>
 
                                     </div>
-                                    <div class="box-body col-xs-4">
+                                    <div class="box-body col-xs-8">
 
                                     <div class="panel panel-border panel-info">
                                           <div class="panel-heading">
@@ -151,16 +151,8 @@
                                               <table id="datatable1" class="table table-striped table-bordered table-responsive">
                                                 <thead>
                                                   <tr>
-                                                    <th>Nombre</th>
-                                                    <th>Contacto de emergencia</th>
-                                                    <th>Referidor</th>
-                                                    <th>Sucursal</th>
-                                                    <th>Fecha de valoracion</th>
-                                                    <th>Fecha de revaloracion</th>
-                                                    <th>Fecha de nacimiento</th>
-                                                    <th>Escuela</th>
-                                                    <th>Frecuencia Terapia</th>
-                                                    <th>Codigo</th>
+                                                    <th>Nombre Completo</th>
+                                                    <th>Ocupacion</th>
                                                     <th>Estatus</th>
                                                     <th>Editar</th>
                                                     <th>Borrar</th>
@@ -171,41 +163,23 @@
 
                                                   <?php
 
-                                                  $valores = count($pacientesi);
+                                                  $valores = count($usuarios);
                                                   for ($i=0; $i < $valores ; $i++) { 
-                                                    $res = $pacientesi[$i];
-                                                    $id = $res -> id_paciente;
+                                                    $res = $usuarios[$i];
+                                                    $id = $res -> id_usuario;
                                                     $nombre = $res -> nombre;
                                                     $apaterno= $res -> apaterno;
                                                     $amaterno = $res -> amaterno;
-                                                    //$edad = $res -> edad; 
-                                                    $contacto = $res -> contacto_emergencia;
-                                                    $numero = $res -> numero_emergencia;
-                                                    $referidor = $res -> referidor;
-                                                    $sucursal = $res -> sucursal;
-                                                    $fecha = $res -> fecha_valoracion;
-                                                    $fecha1 = $res -> fecha_revaloracion;
-                                                    $fecha2 = $res -> fecha_nacimiento;
-                                                    $escuela = $res -> escuela;
-                                                    $frecuencia = $res -> frecuencia;
-                                                    $codigo = $res -> codigo;
                                                     $estatus = $res -> estado; 
+                                                    $ocupacion = $res -> ocupacion; 
 
                                                     $nombre_completo = $nombre . ' ' .$apaterno. ' ' .$amaterno;
-                                                    $contacto_emergencia = $contacto . ' - ' . $numero;
+                                                    // $contacto_emergencia = $contacto . ' - ' . $numero;
 
                                                     echo "
                                                     <tr>
                                                       <td>$nombre_completo</td>
-                                                      <td>$contacto_emergencia</td>
-                                                      <td>$referidor</td>
-                                                      <td>$sucursal</td>
-                                                      <td>$fecha</td>
-                                                      <td>$fecha1</td>
-                                                      <td>$fecha2</td>
-                                                      <td>$escuela</td>
-                                                      <td>$frecuencia</td>
-                                                      <td>$codigo</td>";
+                                                      <td>$ocupacion</td>";
 
                                                       if($estatus == 1) {
                                                         echo "<td><span class='label label-success'>Activo</span></td>";
@@ -214,11 +188,11 @@
                                                       }
 
                                                       echo "<td>";
-                                                      echo "<a href='#' id='Editar' onclick='EditarPaciente($id)'><i class='fa fa-pencil'></i> </a>
+                                                      echo "<a href='#' id='Editar' onclick='EditarUsuario($id)'><i class='fa fa-pencil'></i> </a>
                                                       </td>";
 
                                                       echo "<td>";
-                                                      echo "<a href='#' id='Borrar' onclick='BorrarPaciente($id)'><i class='md md-close'></i> </a>
+                                                      echo "<a href='#' id='Borrar' onclick='BorrarUsuario($id)'><i class='md md-close'></i> </a>
                                                       </td>";
                                                      
                                                     echo "</tr>";

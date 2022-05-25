@@ -224,8 +224,6 @@ function guardar_usuario_server()
   var password = $('#password').val();
   var rol = $('#rol').val();
 
-  alert(rol);
-
   if (nombre != "" &&
   username != "" &&
   password != "" &&

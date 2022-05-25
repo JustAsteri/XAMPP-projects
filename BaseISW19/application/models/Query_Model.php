@@ -4,14 +4,23 @@ class Query_Model extends CI_Model{
 
  /* =============================================================================================================================================================================================================================== */
 
- /* START - CONTROLLER: Dashboard */
+ /* START - CONTROLLER: Usuarios */
 
 function InsertUsuario($datosusuario)
 {
   $this->db->insert('usuarios', $datosusuario);
 }
 
- /* END - CONTROLLER: Dashboard */
+function DatosUsuario()
+{
+  $this->db->select('*');
+  $this->db->from('usuarios');
+  $query = $this->db->get();
+  return $query->result();
+
+}
+
+ /* END - CONTROLLER: Usuarios */
 
 /* =============================================================================================================================================================================================================================== */
 

@@ -10,6 +10,7 @@ class Usuarios extends MY_Controller {
     public function index(){
         $data['tabTitle'] = "Plantilla Base - Usuarios";
         $data['pagecontent'] = "usuarios/usuarios";
+        $data['usuarios'] = $this->Query_Model->DatosUsuario();
 
         $this->loadpageintotemplate($data);
 
