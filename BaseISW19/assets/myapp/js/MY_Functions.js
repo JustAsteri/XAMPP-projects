@@ -297,6 +297,7 @@ function EditarUsuario($id)
             var ocupacion = obj[0].ocupacion;
             var rol       = obj[0].rol;
             var estado    = obj[0].estado;
+            
             $('#password').attr('disabled',true);
             $('#boton_guardar').hide();
             $('#boton_actualizar').show();
@@ -320,15 +321,15 @@ function EditarUsuario($id)
 
 function update_usuario()
 {
-    var id = $('#id_user').val();
-    var nombre = $('#nombre').val();    //.val() -> Get the current value of the first element in the set of matched elements or set the value of every matched element.
+    var id       = $('#id_user').val();
+    var nombre   = $('#nombre').val();    //.val() -> Get the current value of the first element in the set of matched elements or set the value of every matched element.
     var apaterno = $('#apaterno').val();
     var amaterno = $('#amaterno').val();
     var telefono = $('#telefono').val();
-    var email = $('#email').val();
+    var email    = $('#email').val();
     var username = $('#username').val();
     var password = $('#password').val();
-    var rol = $('#rol').val();
+    var rol      = $('#rol').val();
 
     if (nombre != "" &&
     username != "" &&
@@ -340,7 +341,18 @@ function update_usuario()
     rol != "" &&
     id != "")
     {
-        
+        $.ajax({
+        url:myBase_url+"index.php/Usuarios/update_usuario",
+        type:'POST',
+        data:{id:id},
+        async: true,
+        success:function(datos){
+
+        },
+        error: function(){
+          swal("Error 1","Aun existen campos vacios","error");
+        }
+        });
     }
 }
 
