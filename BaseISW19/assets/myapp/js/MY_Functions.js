@@ -286,6 +286,7 @@ function EditarUsuario($id)
         success:function(datos){
             var obj       = JSON.parse(datos);
 
+            var id = obj[0].if;
             var nombre    = obj[0].nombre;
             var apaterno  = obj[0].apaterno;
             var amaterno  = obj[0].amaterno;
@@ -296,13 +297,51 @@ function EditarUsuario($id)
             var ocupacion = obj[0].ocupacion;
             var rol       = obj[0].rol;
             var estado    = obj[0].estado;
+            $('#password').attr('disabled',true);
+            $('#boton_guardar').hide();
+            $('#boton_actualizar').show();
 
+            $('#id_user').val(id);
+            $('#nombre').val(nombre);    //.val() -> Get the current value of the first element in the set of matched elements or set the value of every matched element.
+            $('#apaterno').val(apaterno);
+            $('#amaterno').val(amaterno);
+            $('#telefono').val(telefono);
+            $('#email').val(email);
+            $('#username').val(username);
+            $('#password').val(password);
+            $('#rol').val(rol);
             
         },
         error: function(){
           swal("Error 1","Aun existen campos vacios","error");
         }
     });
+}
+
+function update_usuario()
+{
+    var id = $('#id_user').val();
+    var nombre = $('#nombre').val();    //.val() -> Get the current value of the first element in the set of matched elements or set the value of every matched element.
+    var apaterno = $('#apaterno').val();
+    var amaterno = $('#amaterno').val();
+    var telefono = $('#telefono').val();
+    var email = $('#email').val();
+    var username = $('#username').val();
+    var password = $('#password').val();
+    var rol = $('#rol').val();
+
+    if (nombre != "" &&
+    username != "" &&
+    password != "" &&
+    apaterno != "" &&
+    amaterno != "" &&
+    telefono != "" &&
+    email != "" &&
+    rol != "" &&
+    id != "")
+    {
+        
+    }
 }
 
 /* END - CONTROLLER: Usuario */

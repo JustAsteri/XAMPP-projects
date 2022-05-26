@@ -75,6 +75,10 @@
                                     <div class="box-body col-xs-4">
 
                                       <div class="form-group">
+                                        <div class="col-xs-12">
+                                              <input class="form-control" type="text" required="" id="id"
+                                              placeholder="id" style="display: none;">
+                                          </div>
                                           <div class="col-xs-12">
                                               <input class="form-control" type="text" required="" id="nombre" onkeypress="return verifyenterkeypressed(event)"
                                               placeholder="Nombre">
@@ -136,7 +140,10 @@
 
 
                                       <div align="center">
-                                        <button class="btn btn-primary waves-effect waves-light" onClick="guardar_usuario();">Guardar</button>
+                                        <button class="btn btn-primary waves-effect waves-light" onClick="guardar_usuario();" id="boton_guardar">Guardar</button>
+                                      </div>
+                                      <div align="center">
+                                        <button class="btn btn-primary waves-effect waves-light" onClick="update_usuario();" id="boton_actualizar" style="display: none;">Actualizar</button>
                                       </div>
 
                                     </div>
@@ -206,50 +213,6 @@
                                         </div>
                                   </div>
                                     </div>
-                                    
-                                   <!--  <div class="box-body col-xs-7">
-                                        <table class="table">
-                                          <thead>
-                                            <title>Lista de usuarios</title>
-                                            <tr>
-                                              <th scope="col">#</th>
-                                              <th scope="col">Nombre</th>
-                                              <th scope="col">Contacto de Emergencia</th>
-                                              <th scope="col">Referidor</th>
-                                              <th scope='col'>Sucursal</th>
-                                              <th scope='col'>Fecha de valoracion</th>
-                                              <th scope='col'>Fecha de revaloracion</th>
-                                              <th scope='col'>Fecha de nacimiento</th>
-                                              <th scope='col'>Escuela</th>
-                                              <th scope='col'>Codigo</th>
-                                              <th scope='col'>Estatus</th>
-                                              <th scope='col'>Editar</th>
-                                              <th scope='col'>Borrar</th>
-                                            </tr>
-                                          </thead>
-                                          <tbody>
-                                            <tr>
-                                              <th scope="row">1</th>
-                                              <td>Mark</td>
-                                              <td>Otto</td>
-                                              <td>@mdo</td>
-                                            </tr>
-                                            <tr>
-                                              <th scope="row">2</th>
-                                              <td>Jacob</td>
-                                              <td>Thornton</td>
-                                              <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                              <th scope="row">3</th>
-                                              <td colspan="2">Larry the Bird</td>
-                                              <td>@twitter</td>
-                                            </tr>
-                                          </tbody>
-                                        </table>
-                                    </div>
-                                </div> -->
-
                             </div>
                           </div>
                         </div>

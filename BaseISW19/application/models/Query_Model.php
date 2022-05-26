@@ -15,6 +15,7 @@ function DatosUsuario()
 {
   $this->db->select('*');
   $this->db->from('usuarios');
+  $this->db->where("(rol= 'A' OR rol = 'SU' OR rol = 'E')",NULL,FALSE);
   $query = $this->db->get();
   return $query->result();
 
