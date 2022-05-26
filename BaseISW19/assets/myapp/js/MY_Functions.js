@@ -286,8 +286,8 @@ function EditarUsuario($id)
         success:function(datos){
             var obj       = JSON.parse(datos);
 
-            var id = obj[0].if;
-            var nombre    = obj[0].nombre;
+            var id     = obj[0].if;
+            var nombre = obj[0].nombre;
             var apaterno  = obj[0].apaterno;
             var amaterno  = obj[0].amaterno;
             var telefono  = obj[0].telefono;
