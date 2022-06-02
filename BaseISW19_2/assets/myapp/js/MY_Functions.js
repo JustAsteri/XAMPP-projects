@@ -364,7 +364,7 @@ function UpdateUsuario(){
 function BorrarUsuario($id){
 
     var id = $id
-    // if(id != ""){
+    if(id != ""){
        
         $.ajax({
             url:myBase_url+"index.php/Usuarios/DeleteUsuario",
@@ -391,9 +391,9 @@ function BorrarUsuario($id){
             }
         });
         
-    // }else {
-    //     swal("Alerta","Aun existen campos vacios","warning");
-    // }
+    }else {
+        swal("Alerta","Usuario no encontrado","warning");
+    }
 
 }
 
