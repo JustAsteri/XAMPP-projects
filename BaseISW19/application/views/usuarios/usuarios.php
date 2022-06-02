@@ -1,20 +1,20 @@
     <!-- Content Wrapper. Contains page content -->
-
+     
     <?php
      /* Dependencias requeridas para el funcionamiento de la DataTable */
     /* ==============================================================
             <---  CSS TEMPLATE  --->
             ============================================================== */
-
+    
             echo link_tag('assets/darktemplate/plugins/bootstrap-sweetalert/sweet-alert.css');
-
+            
     /* ==============================================================
             <---  JS TEMPLATE  --->
             ============================================================== */
 
             echo script_tag("assets/darktemplate/plugins/bootstrap-sweetalert/sweet-alert.js");
             echo script_tag("assets/darktemplate/pages/jquery.sweet-alert.init.js");
-
+          
     /* ==============================================================
             <---  JS MYAPP  --->
             ============================================================== */
@@ -25,7 +25,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-
+        
     </head>
 
     <script>
@@ -47,7 +47,7 @@
 
             <!-- ============================================================== -->
             <!-- Start right Content here -->
-            <!-- ============================================================== -->
+            <!-- ============================================================== -->                      
             <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
@@ -56,8 +56,8 @@
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
-                                <h4 class="page-title">Inicio</h4>
-
+                                <h4 class="page-title">Usuarios</h4>
+                               
                             </div>
                         </div>
 
@@ -66,163 +66,156 @@
                          <div class="col-lg-12">
                           <div class="panel panel-border panel-info">
                               <div class="panel-heading">
-                                  <h3 class="panel-title">Titulo</h3>
+                                  <h3 class="panel-title">Lista de usuarios</h3>
                               </div>
                               <div class="table-responsive">
                                 <div class="panel-body">
 
                                   <div class="card-box">
-                                    <div class="box-body col-xs-4">
+                                  <!-- <form role="form" method="POST" id="formMaterial"> -->
+                                      <div class="box-body col-xs-4">
 
-                                      <div class="form-group">
-                                        <div class="col-xs-12">
-                                              <input class="form-control" type="text" required="" id="id"
-                                              placeholder="id" style="display: none;">
-                                          </div>
-                                          <div class="col-xs-12">
-                                              <input class="form-control" type="text" required="" id="nombre" onkeypress="return verifyenterkeypressed(event)"
-                                              placeholder="Nombre">
-                                          </div>
+                                            <div class="form-group ">
+                                                <div class="col-xs-12">
+                                                    <input class="form-control" type="text" required="" id="id_user" placeholder="Nombre" style = "display: none">
+                                                    <input class="form-control" type="text" required="" id="nombre" placeholder="Nombre">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group ">
+                                                <div class="col-xs-12">
+                                                    <input class="form-control" type="text" required="" id="apaterno" placeholder="Apellido paterno">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group ">
+                                                <div class="col-xs-12">
+                                                    <input class="form-control" type="text" required="" id="amaterno" placeholder="Apellido materno">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group ">
+                                                <div class="col-xs-12">
+                                                    <input class="form-control" type="text" required="" id="telefono" placeholder="Telefono">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group ">
+                                                <div class="col-xs-12">
+                                                    <input class="form-control" type="text" required="" id="email" placeholder="Email">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group ">
+                                                <div class="col-xs-12">
+                                                    <input class="form-control" type="text" required="" id="username" placeholder="Usuario" onblur="VerificaUsuario();">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group ">
+                                                <div class="col-xs-12">
+                                                    <input class="form-control" type="password" required="" id="password" placeholder="Contraseña">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                
+                                            <label for="rol">Rol</label>
+
+                                            <select name="rol" id="rol" class="form-select">
+                                                <option value="" selected disabled>Seleccione un rol</option>
+                                                <option value="A">Administrador</option>
+                                                <option value="E">Empleado</option>
+                                            </select>
+                                            </div>
+
+                                            <div class="col-md-12" id="divestado"  style = "display: none">
+                                                
+                                                <label for="estado">Estado</label>
+
+                                            <select name="estado" id="estado" class="form-select">
+                                                <option value="" selected disabled>Elije Estado</option>
+                                                <option value="1">Activo</option>
+                                                <option value="0">Inactivo</option>
+                                            </select>
+                                            </div>
+
+                                            <div align="center">
+                                                <button class="btn btn-primary waves-effect waves-light" onClick="GuardaUsuario();" id = "botonguardar">Guardar</button>
+                                            </div>
+                                            <div align="center">
+                                                <button class="btn btn-primary waves-effect waves-light" onClick="UpdateUsuario();" style = "display: none" id = "botonactualizar">Actualizar</button>
+                                            </div>
+
+
                                       </div>
-
-                                      <div class="form-group">
-                                          <div class="col-xs-12">
-                                              <input class="form-control" type="text" required="" id="apaterno" onkeypress="return verifyenterkeypressed(event)"
-                                              placeholder="Apellido paterno">
-                                          </div>
-                                      </div>
-
-                                      <div class="form-group">
-                                          <div class="col-xs-12">
-                                              <input class="form-control" type="text" required="" id="amaterno" onkeypress="return verifyenterkeypressed(event)"
-                                              placeholder="Apellido materno">
-                                          </div>
-                                      </div>
-
-                                      <div class="form-group">
-                                          <div class="col-xs-12">
-                                              <input class="form-control" type="text" required="" id="telefono" onkeypress="return verifyenterkeypressed(event)"
-                                              placeholder="Telefono">
-                                          </div>
-                                      </div>
-
-                                      <div class="form-group">
-                                          <div class="col-xs-12">
-                                              <input class="form-control" type="text" required="" id="email" onkeypress="return verifyenterkeypressed(event)"
-                                              placeholder="Correo Eléctronico">
-                                          </div>
-                                      </div>
-
-                                      <div class="form-group">
-                                          <div class="col-xs-12">
-                                              <input class="form-control" type="text" required="" id="username" onkeypress="return verifyenterkeypressed(event)"
-                                              placeholder="Nombre de Usuario">
-                                          </div>
-                                      </div>
-
-                                      <div class="form-group">
-                                          <div class="col-xs-12">
-                                              <input class="form-control" type="password" required="" id="password" onkeypress="return verifyenterkeypressed(event)"
-                                              placeholder="Contraseña">
-                                          </div>
-                                      </div>
-
-                                      <div class="form-group ">
-                                          <select id="rol" name ="rol" class="form-control" style="">
-                                              <option value ="">Elige un rol</option>
-                                              <option value ="A">Administrador</option>
-                                              <option value ="E">Empleado</option>
-                                          </select>
-                                        </div>
-                                      <br>
-                                      <br>
-                                      <br>
-
-
-                                      <div align="center">
-                                        <button class="btn btn-primary waves-effect waves-light" onClick="guardar_usuario();" id="boton_guardar">Guardar</button>
-                                      </div>
-                                      <div align="center">
-                                        <button class="btn btn-primary waves-effect waves-light" onClick="update_usuario();" id="boton_actualizar" style="display: none;">Actualizar</button>
-                                      </div>
-
-                                    </div>
-                                    <div class="box-body col-xs-8">
-
-                                    <div class="panel panel-border panel-info">
-                                          <div class="panel-heading">
-                                              <h3 class="panel-title">Listado de Usuarios</h3>
-                                          </div>
+                                  <!-- </form> -->
+                                  <div class="panel panel-border panel-info">
                                           <div class="table-responsive">
                                             <div class="panel-body">
                                               <table id="datatable1" class="table table-striped table-bordered table-responsive">
                                                 <thead>
-                                                  <tr>
-                                                    <th>Nombre Completo</th>
-                                                    <th>Ocupacion</th>
-                                                    <th>Estatus</th>
-                                                    <th>Editar</th>
-                                                    <th>Borrar</th>
-                                                  </tr>
-                                                </thead>
+                                                <tr>
+                                <th>Nombre</th>
+                                <th>Ocupacion</th>
+                                <th>Editar</th>
+                                <th>Borrar</th>
 
-                                                <tbody> 
+                              </tr>
+                            </thead>
+                            <tbody> 
 
-                                                  <?php
+                            <?php
 
-                                                  $valores = count($usuarios);
-                                                  for ($i=0; $i < $valores ; $i++) { 
-                                                    $res = $usuarios[$i];
-                                                    $id = $res -> id_usuario;
-                                                    $nombre = $res -> nombre;
-                                                    $apaterno= $res -> apaterno;
-                                                    $amaterno = $res -> amaterno;
-                                                    $estatus = $res -> estado; 
-                                                    $ocupacion = $res -> ocupacion; 
+                                    $valores = count($usuarios);
 
-                                                    $nombre_completo = $nombre . ' ' .$apaterno. ' ' .$amaterno;
-                                                    // $contacto_emergencia = $contacto . ' - ' . $numero;
+                                    for ($i=0; $i < $valores ; $i++) { 
+                                    $res = $usuarios[$i];
+                                    $id = $res -> id_usuario;
+                                    $nombre = $res -> nombre;
+                                    $ocupacion= $res -> ocupacion;
+                                    $apaterno = $res -> apaterno;
+                                    $amaterno = $res -> amaterno;
 
-                                                    echo "
-                                                    <tr>
-                                                      <td>$nombre_completo</td>
-                                                      <td>$ocupacion</td>";
+                                    $nombre_completo = $nombre . ' ' .$apaterno. ' ' .$amaterno;
+                                    
 
-                                                      if($estatus == 1) {
-                                                        echo "<td><span class='label label-success'>Activo</span></td>";
-                                                      }else{
-                                                        echo "<td><span class='label label-danger'>Inactivo</span></td>";
-                                                      }
+                                    echo "
+                                    <tr>
+                                        <td>$nombre_completo</td>
+                                        <td>$ocupacion</td>";
+                                    
 
-                                                      echo "<td>";
-                                                      echo "<a href='#' id='Editar' onclick='EditarUsuario($id)'><i class='fa fa-pencil'></i> </a>
-                                                      </td>";
+                                        echo "<td>";
+                                        echo "<a href='#' id='Editar' onclick='EditarUsuario($id)'><i class='fa fa-pencil'></i> </a>
+                                        </td>";
 
-                                                      echo "<td>";
-                                                      echo "<a href='#' id='Borrar' onclick='BorrarUsuario($id)'><i class='md md-close'></i> </a>
-                                                      </td>";
-                                                     
-                                                    echo "</tr>";
-                                                  }
-                                                ?> 
+                                        echo "<td>";
+                                        echo "<a href='#' id='Borrar' onclick='BorrarUsuario($id)'><i class='md md-close'></i> </a>
+                                        </td>";
+                                    
+                                    echo "</tr>";
+                                    }
+                                    ?> 
+
 
                                                 </tbody>
-                                              </table>
-                                            </div>
-                                          </div>
+                                            </table>
                                         </div>
-                                  </div>
                                     </div>
+                                </div>
+                                </div>
+                            
                             </div>
                           </div>
                         </div>
                         </div>
 
-                    </div> <!-- container -->
+                    </div> <!-- container -->                               
                 </div> <!-- content -->
 
                 <footer class="footer">
-                     <?= date('Y')?> &copy;
+                     <?= date('Y')?> &copy; 
                 </footer>
 
             </div>

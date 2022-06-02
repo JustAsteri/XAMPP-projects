@@ -2,22 +2,22 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Session extends CI_Controller {
-
+    
     private $redirectURL;
 
-
+    
     public function __construct() {
         parent::__construct();
         $this->loaddependencies();
     }
-
+    
     public function index(){
         $data['tabTitle'] = "Inicio de Sesión - Plantilla Base";
 
         $this->load->view('templates/login',$data);
-
+  
     }
-
+    
     public function logout(){
         $user = $this->session->userdata('user');
         $this->Session_Model->CloseSession($user);
@@ -25,19 +25,17 @@ class Session extends CI_Controller {
         redirect('Session', 'refresh');
     }
 
-    //Show a messeage when Javascript is not installed.
     public function SinJava(){
         $user = $this->session->userdata('user');
         $this->Session_Model->CloseSession($user);
         $this->session->sess_destroy();
         redirect('../', 'refresh');
     }
-
-    //Validations
+    
     public function validatelogin(){
-
+        
         $this->validationrules();
-
+        
         if ($this->form_validation->run() == FALSE) {
             echo validation_errors();
         } else {
@@ -62,7 +60,7 @@ class Session extends CI_Controller {
                         echo 'IUOP'; //Error: Incorrect User Or Password
                     }
                 }else{
-                    echo 'UWOA'; //Error: User Without Access
+                    echo 'UWOA'; //Error: User Without Access  
                 }
             }else
             echo "UWAS"; //Error: User With Active Session
@@ -84,13 +82,12 @@ class Session extends CI_Controller {
             }else{
                 echo json_encode("IUOP");
             }
-
+        
         }else{
             echo json_encode("UWOA");
         }
     }
-
-    //
+  
     private function findredirecturl(){
 
         if ($this->session->userdata('redirect')){
@@ -101,19 +98,19 @@ class Session extends CI_Controller {
         }
         return $url;
     }
-
+    
     private function setsession($type,$value){
-        $newdata = array(
-            $type => $value
+        $newdata = array( 
+            $type => $value 
         );
         $this->session->set_userdata($newdata);
     }
-
+    
     private function validationrules(){
         $this->form_validation->set_rules('user', '"Usuario"', 'required|trim');
         $this->form_validation->set_rules('pass', '"Contraseña"', 'required|trim');
     }
-
+    
     protected function loaddependencies(){
         $this->load->model('Session_Model');
     }

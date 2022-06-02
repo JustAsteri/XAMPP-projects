@@ -38,17 +38,19 @@
                             <li class="text-muted menu-title" style="color:black;">Menu</li>
 
                             <li class="has_sub" id="home">
-                                <a href="<?= base_url('index.php/Dashboard/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Inicio</span> </a>
+                                <a href="<?= base_url('index.php/Dashboard/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-home "></i><span> Inicio</span> </a>
                             </li>
+                            
                             <li class="has_sub" id="usuarios">
-                                <a href="<?= base_url('index.php/Usuarios/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Usuarios</span> </a>
+                                <a href="<?= base_url('index.php/Usuarios/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-user "></i><span> Usuarios</span> </a>
                             </li>
-                            <li class="has_sub" id="usuarios">
-                                <a href="<?= base_url('index.php/Calendario/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Calendario</span> </a>
+                            <li class="has_sub" id="calendario">
+                                <a href="<?= base_url('index.php/Calendario/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-calendar "></i><span> Calendario</span> </a>
                             </li>
-                            <li class="has_sub" id="usuarios">
-                                <a href="<?= base_url('index.php/Clientes/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-bank "></i><span> Clientes</span> </a>
+                            <li class="has_sub" id="clientes">
+                                <a href="<?= base_url('index.php/Clientes/');?>" class="waves-effect waves-light" style="color:black;"><i class="fa fa-money "></i><span> Clientes</span> </a>
                             </li>
+
 
                         </ul>
                         <div class="clearfix"></div>

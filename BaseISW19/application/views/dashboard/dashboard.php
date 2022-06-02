@@ -1,20 +1,20 @@
     <!-- Content Wrapper. Contains page content -->
-
+     
      <?php
      /* Dependencias requeridas para el funcionamiento de la DataTable */
     /* ==============================================================
             <---  CSS TEMPLATE  --->
             ============================================================== */
-
+    
             echo link_tag('assets/darktemplate/plugins/bootstrap-sweetalert/sweet-alert.css');
-
+            
     /* ==============================================================
             <---  JS TEMPLATE  --->
             ============================================================== */
 
             echo script_tag("assets/darktemplate/plugins/bootstrap-sweetalert/sweet-alert.js");
             echo script_tag("assets/darktemplate/pages/jquery.sweet-alert.init.js");
-
+          
     /* ==============================================================
             <---  JS MYAPP  --->
             ============================================================== */
@@ -25,7 +25,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-
+        
     </head>
 
     <script>
@@ -47,7 +47,7 @@
 
             <!-- ============================================================== -->
             <!-- Start right Content here -->
-            <!-- ============================================================== -->
+            <!-- ============================================================== -->                      
             <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
@@ -57,7 +57,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <h4 class="page-title">Inicio</h4>
-
+                               
                             </div>
                         </div>
 
@@ -72,18 +72,19 @@
                                 <div class="panel-body">
 
                                   <div class="card-box">
-                                    
+
                                 </div>
+                            
                             </div>
                           </div>
                         </div>
                         </div>
 
-                    </div> <!-- container -->
+                    </div> <!-- container -->                               
                 </div> <!-- content -->
 
                 <footer class="footer">
-                     <?= date('Y')?> &copy;
+                     <?= date('Y')?> &copy; 
                 </footer>
 
             </div>

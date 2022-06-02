@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <meta name="description" content="Sistema de Tienda Virtual">
         <meta name="author" content="Daniel Alexis Martinez Sosa">
 
-        <link rel="shortcut icon" href="<?php echo base_url('assets/myapp/img/.png'); ?>">
+        <link rel="shortcut icon" href="<?php echo base_url('assets/myapp/img/200.png'); ?>">
         <title><?= $tabTitle; ?></title>
 
         <?php
@@ -100,7 +100,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class=" card-box" id="lo">
                 <div id="displayUserErrors"></div>
                 <div class="panel-heading">
-                    <div align="center">&emsp;&emsp;&emsp;<img src="<?php echo base_url("assets/myapp/img/img/.png") ?>" width="250px" height="150px" style= "padding-right: 50px"><br></div>
+                    <div align="center">&emsp;&emsp;&emsp;<img src="<?php echo base_url("assets/myapp/img/200.png") ?>" width="250px" height="150px" style= "padding-right: 50px"><br></div>
                     <h2 class="text-center"> <strong class="text-black">Plantilla Base</strong> </h2>
                 </div> 
                 <div class="panel-body" >
