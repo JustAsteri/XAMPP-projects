@@ -96,11 +96,6 @@ public function UpdateUser(){
 
 }
 
-public function DeleteUsuario()
-{
-    $id = $this->input->post('id');
-    $this->Query_Model->BorrarUsuario($id);
-}
 
 
 }

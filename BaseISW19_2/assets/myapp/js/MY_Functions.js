@@ -361,41 +361,6 @@ function UpdateUsuario(){
     }
 }
 
-function BorrarUsuario($id){
-
-    var id = $id
-    if(id != ""){
-       
-        $.ajax({
-            url:myBase_url+"index.php/Usuarios/DeleteUsuario",
-            type:'POST',
-            data:{id:id},
-            async: true,
-            success:function(datos){
-                swal({   
-                    title: "Exito",
-                    text: "Se ha guardado usuario sesion con exito ",   
-                    type: "success",   
-                    showCancelButton: false,   
-                    confirmButtonColor: "#DD6B55",   
-                    confirmButtonText: "OK",   
-                    cancelButtonText: "No, Cancelar",   
-                    closeOnConfirm: true,   
-                    closeOnCancel: false 
-                }, function(isConfirm){ 
-                        location.href = "";       
-                }); 
-            },
-            error:function (){
-                swal("Error","Ha ocurrido un error intentelo de nuevo","error");
-            }
-        });
-        
-    }else {
-        swal("Alerta","Usuario no encontrado","warning");
-    }
-
-}
 
 
  /*END CONTROLLER USUARIOS */
@@ -640,10 +605,84 @@ function UpdateCliente(){
 /*END CONTROLLER CLIENTES */
 
 
-
-
 /* =============================================================================================================================================================================================================================== */
 
+/*START CONTROLLER HORARIO */
+
+function AgregarHorario()
+{
+    var cliente = $('#cliente').val();
+    var fecha1 = $('#fecha1').val();
+    var fecha2 = $('#fecha2').val();
+    var anio = $('#anio').val();
+
+    if(cliente != "" && fecha1 != "" && fecha2 != "" && anio != "")
+    {
+        $.ajax({
+            url:myBase_url+"index.php/Horarios/ConsultaHorarios",
+            type:'POST',
+            data:{id:id,nombre:nombre,apaterno:apaterno,amaterno:amaterno,telefono:telefono,email:email,estado:estado,empresa:empresa},
+            async: true,
+            success:function(datos){
+
+            },    error: function(){
+                    swal("Error","Ha ocurrido un error","error");
+                }
+            });
+
+    }
+    else
+    {
+        swal("Cuidado","Aun quedan campos vacios");
+    }
+}
+
+function RellenarHorarioFunciones($id){
+
+    var cliente   = $('#cliente').val();
+    var fecha1    = $('#fecha1').val();
+    var fecha2    = $('#fecha2').val();
+    var anio      = $('#anio').val();
+
+    if(cliente != "" && fecha1 != "" && fecha2 != "" && anio != ""){
+
+        $.ajax({
+                url:myBase_url+"index.php/Calendario/HorariosCliente",
+                type:'POST',
+                data:{
+                    cliente:cliente,
+                    fecha1:fecha1,
+                    fecha2:fecha2,
+                    anio:anio
+                },
+                async: true,
+                success:function(datos){
+
+                    $('#calendario').show();
+
+                    swal({
+                        title: "Exito",
+                        text: "Se ha actualizado el cliente con éxito",
+                        type: "success",
+                        showCancelButton: false,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "OK",
+                        cancelButtonText: "No, Cancelar",
+                        closeOnConfirm: true,
+                        closeOnCancel: false
+                    }, function(isConfirm){
+                        location.href = "";
+                    });
+
+                },    error: function(){
+                    swal("Error","Ha ocurrido un error","error");
+                }
+            });
+
+    }
+    }
+
+/*END CONTROLLER CLIENTES */
 
 /* =============================================================================================================================================================================================================================== */
 

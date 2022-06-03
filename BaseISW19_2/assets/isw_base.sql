@@ -147,5 +147,17 @@ UNLOCK TABLES;
 
 -- Dump completed on 2022-06-01 10:03:33
 
-SELECT * FROM clientes;
+CREATE TABLE horarios(
+id_horario int,
+cliente varchar (50),
+hora_visita varchar (50),
+dia_visita varchar (50),
+numero_semama varchar (50),
+fecha_operacion date,
+numero_anio int ,
+estado int
+);
+
+USE app_muestra;
+SELECT * FROM clientes;	
 SELECT * FROM usuarios;

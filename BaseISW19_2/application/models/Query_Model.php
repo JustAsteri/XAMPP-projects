@@ -57,13 +57,6 @@ function UpdateUsuario($id,$datosusuario){
 
 }
 
-function BorrarUsuario($id){
-
-    $this->db->where('id_usuario',$id);
-    $this->db->delete('usuarios');
-
-}
-
 
 /* END - CONTROLLER: Usuarios */
 
@@ -77,17 +70,6 @@ function DatosCliente(){
     $this->db->from('clientes');
     $query = $this->db->get();
     return $query->result();
-}
-
-
-function HorariosPorCliente($id){
-
-    $this->db->select('*');
-    $this->db->from('horarios');
-    $this->db->where('id_cliente',$id);
-    $query = $this->db->get();
-    return $query->result();
-
 }
 
 function InsertCliente($datosusuario){
@@ -130,10 +112,38 @@ function UpdateCliente($id,$datosusuario){
 
 /* END - CONTROLLER: Usuarios */
 
+//==============================================================================
+
+/* START - CONTROLLER: CALENDARIO */
+
+function DatosClientesActivos()
+{
+    $this->db->select('*');
+    $this->db->from('clientes');
+    $this->db->where('estado',1);
+    $query = $this->db->get();
+    return $query->result();  
+  }
+
+
+
+/* END - CONTROLLER: CALENDARIO */
+
+//==============================================================================
+
+/* START - CONTROLLER: HORARIO */
+
+function HorariosPorCliente($cliente,$fecha1,$fecha2,$anio){
+
+    $query = $this->db->query
+    ("SELECT * FROM horarios 
+      WHERE horarios.cliente = '$cliente' 
+      AND DATE(horarios.fecha_operacion) 
+      BETWEEN '$fecha1' AND '$fecha2'");
+          
+      return $query->result();
+
 }
 
-
-
-
-
-
+/* START - CONTROLLER: HORARIO */
+}

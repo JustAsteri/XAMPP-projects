@@ -124,7 +124,7 @@
                                                 $valores = count($clientes);
                                                 for ($i=0; $i < $valores ; $i++) { 
                                                   $res = $clientes[$i];
-                                                  $id = $res -> id_usuario;
+                                                  $id = $res -> id_cliente;
                                                   $nombre = $res -> nombre;
                                                   $apaterno = $res -> apaterno;
                                                   $amaterno = $res -> amaterno;
@@ -252,7 +252,7 @@
                         </div>
                         </div>
 
-                        <div class="col-lg-12" id="calendario">
+                        <div class="col-lg-12" id="calendariomenu">
                             <div class="panel panel-border panel-info">
                                 <div class="panel-heading">
                                   <h3 class="panel-title" id="Materia">Agregar &nbsp;&nbsp;</h3>

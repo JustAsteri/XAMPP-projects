@@ -12,14 +12,18 @@ class Calendario extends MY_Controller {
         $data['pagecontent'] = "calendario/calendario";
 
 
-       $data['clientes'] = $this->Query_Model->DatosClientes();
+       $data['clientes'] = $this->Query_Model->DatosClientesActivos();
         $this->loadpageintotemplate($data);
        
    }
 
    public function HorariosCliente(){
-       $id = $this->input->post("id");
-       $res = $this->Query_Model->HorariosPorCliente($id);;
+       $cliente = $this->input->post("cliente");
+       $fecha1 = $this->input->post("fecha1");
+       $fecha2 = $this->input->post("fecha2");
+       $anio = $this->input->post("anio");
+
+       $res = $this->Query_Model->HorariosPorCliente($cliente, $fecha1, $fecha2, $anio);
        echo json_encode($res);
    }
 
