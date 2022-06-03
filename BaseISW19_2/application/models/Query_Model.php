@@ -139,7 +139,7 @@ function HorariosPorCliente($cliente,$fecha1,$fecha2,$anio){
     ("SELECT * FROM horarios 
       WHERE horarios.cliente = '$cliente' 
       AND DATE(horarios.fecha_operacion) 
-      BETWEEN '$fecha1' AND '$fecha2'");
+      BETWEEN '$fecha1' AND '$fecha2' AND horarios.numero_anio = '$anio'");
           
       return $query->result();
 

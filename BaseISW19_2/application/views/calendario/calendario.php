@@ -65,6 +65,15 @@
 
         });
 
+        function CountDays()
+        {
+
+        }
+
+        function CountDays2()
+        {
+          
+        }
 
     </script>
 

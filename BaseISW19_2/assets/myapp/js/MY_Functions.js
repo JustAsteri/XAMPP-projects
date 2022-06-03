@@ -658,7 +658,17 @@ function RellenarHorarioFunciones($id){
                 async: true,
                 success:function(datos){
 
-                    $('#calendario').show();
+                    var obj = JSON.parse(datos);
+
+                    if (obj != "") 
+                    {
+                        $('#calendario').show();
+                    }
+                    else
+                    {
+                        swal("Error","No existen datos para el rango de fechas seleccionado","error");
+                    }
+                    
 
                     swal({
                         title: "Exito",
