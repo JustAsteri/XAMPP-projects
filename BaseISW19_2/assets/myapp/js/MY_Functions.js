@@ -637,7 +637,7 @@ function AgregarHorario()
     }
 }
 
-function RellenarHorarioFunciones($id){
+function RellenaHorarioFunciones($id){
 
     var cliente   = $('#cliente').val();
     var fecha1    = $('#fecha1').val();
@@ -668,21 +668,6 @@ function RellenarHorarioFunciones($id){
                     {
                         swal("Error","No existen datos para el rango de fechas seleccionado","error");
                     }
-                    
-
-                    swal({
-                        title: "Exito",
-                        text: "Se ha actualizado el cliente con éxito",
-                        type: "success",
-                        showCancelButton: false,
-                        confirmButtonColor: "#DD6B55",
-                        confirmButtonText: "OK",
-                        cancelButtonText: "No, Cancelar",
-                        closeOnConfirm: true,
-                        closeOnCancel: false
-                    }, function(isConfirm){
-                        location.href = "";
-                    });
 
                 },    error: function(){
                     swal("Error","Ha ocurrido un error","error");
