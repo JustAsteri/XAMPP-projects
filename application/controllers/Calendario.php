@@ -25,6 +25,7 @@ class Calendario extends MY_Controller {
 
        $res = $this->Query_Model->HorariosPorCliente($cliente, $fecha1, $fecha2, $anio);
        echo json_encode($res);
+       //hola
    }
 
    public function SaveHorario(){
