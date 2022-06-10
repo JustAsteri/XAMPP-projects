@@ -22,8 +22,6 @@
             ============================================================== */
              echo script_tag("assets/myapp/js/MY_Functions.js");
             ?>
-
-
 <html>
     <head>
         <meta charset="utf-8">

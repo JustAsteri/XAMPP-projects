@@ -99,7 +99,6 @@ function GetClienteById($id){
     $this->db->where('id_cliente',$id);
     $query = $this->db->get();
     return $query->result();
-
 }
 
 function UpdateCliente($id,$datosusuario){

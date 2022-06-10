@@ -49,14 +49,15 @@ UNLOCK TABLES;
 -- Table structure for table `horario`
 --
 
-DROP TABLE IF EXISTS `horario`;
+DROP TABLE IF EXISTS `horarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `horario` (
+CREATE TABLE `horarios` (
   `id_horario` int(11) NOT NULL AUTO_INCREMENT,
   `cliente` varchar(100) DEFAULT NULL,
   `hora_visita` varchar(100) DEFAULT NULL,
   `dia_visita` varchar(100) DEFAULT NULL,
+  `motivo_visita` varchar(100) DEFAULT NULL,
   `numero_semana` varchar(100) DEFAULT NULL,
   `fecha_operacion` date DEFAULT NULL,
   `numero_anio` int(11) DEFAULT NULL,
@@ -64,6 +65,7 @@ CREATE TABLE `horario` (
   PRIMARY KEY (`id_horario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+#DROP TABLE horarios;
 
 --
 -- Dumping data for table `horario`

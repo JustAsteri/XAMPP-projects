@@ -18,7 +18,7 @@ class Calendario extends MY_Controller {
    }
 
    public function HorariosCliente(){
-       $cliente = $this->input->post("cliente");
+       $cliente = $this->input->post("clientes");
        $fecha1 = $this->input->post("fecha1");
        $fecha2 = $this->input->post("fecha2");
        $anio = $this->input->post("anio");

@@ -639,7 +639,7 @@ function AgregarHorario()
 
 function RellenaHorarioFunciones(){
 
-    var cliente   = $('#cliente').val();
+    var cliente   = $('#clientes').val();
     var fecha1    = $('#fecha1').val();
     var fecha2    = $('#fecha2').val();
     var anio      = $('#anio').val();
@@ -649,7 +649,7 @@ function RellenaHorarioFunciones(){
         $.ajax({
                 url:myBase_url+"index.php/Clientes/ClientePorID",
                 type:'POST',
-                data:{cliente:cliente},
+                data:{id:cliente},
                 async: true,
                 success:function(datos){
 
@@ -659,7 +659,7 @@ function RellenaHorarioFunciones(){
 
                     if (obj != "")
                     {
-                        var id = obj[0].id_client;
+                        var id = obj[0].id_cliente;
                         alert(id);
                         var nombre = obj[0].nombre;
                         var apaterno = obj[0].apaterno;
@@ -667,7 +667,7 @@ function RellenaHorarioFunciones(){
 
                         var nombrecompleto = nombre + ' ' + apaterno + ' ' + amaterno;
                         $("#t1").val(nombrecompleto);
-                        $("id_c").val(id);
+                        $("#id_c").val(id);
                     }
                 },
                 error: function(){
